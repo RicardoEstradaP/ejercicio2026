@@ -148,43 +148,43 @@ Haz clic en cualquier referencia para ver su resumen.
 references = [
     {
         "title": "Arnaiz-Rodríguez, A., et al. (2025). Between Help and Harm: An Evaluation of Mental Health Crisis Handling by LLMs. arXiv:2509.24857v2.",
-        "summary": """Large language model-powered chatbots have transformed how people seek information, especially in high-stakes contexts like mental health. Despite their support capabilities, safe detection and response to crises such as suicidal ideation and self-harm are still unclear, hindered by the lack of unified crisis taxonomies and clinical evaluation standards. The study develops a taxonomy of six crisis categories, builds a dataset of over 2,000 inputs from 12 mental health datasets, and proposes a clinical response assessment protocol. Results show that although some models handle explicit crises relatively well, many responses remain inappropriate or unsafe, especially for self-harm and suicide-related content. The findings highlight the urgent need for better safeguards, crisis detection, and context-aware responses.""",
+        "summary": """Este estudio analiza cómo los modelos de lenguaje manejan situaciones críticas en salud mental, especialmente ante ideación suicida y autolesiones. Los autores desarrollan una taxonomía de seis categorías de crisis, construyen un conjunto de más de 2,000 entradas provenientes de 12 bases de datos de salud mental y proponen un protocolo de evaluación clínica de respuestas. Los resultados muestran que, aunque algunos modelos responden relativamente bien ante crisis explícitas, muchas respuestas siguen siendo inapropiadas o inseguras, sobre todo en contenidos relacionados con suicidio y autolesión. El trabajo subraya la necesidad urgente de mejores salvaguardas, detección de crisis y respuestas sensibles al contexto.""",
     },
     {
         "title": "Blease, C. & Rodman, A. (2025). Generative Artificial Intelligence in Mental Healthcare: An Ethical Evaluation. Current Treatment Options in Psychiatry. https://doi.org/10.1007/s40501-024-00340-х",
-        "summary": """This review examines the ethical implications of generative AI chatbots in mental healthcare using biomedical ethics principles. It recognizes the growing potential of these tools to assist with clinical tasks such as patient history collection, documentation support, and empathic interactions. However, it also emphasizes that focused attention on mental healthcare ethics remains limited. The review argues that future research must clarify the benefits and harms of these systems, particularly around responsibility, safety, and ethical practice in emotionally sensitive contexts.""",
+        "summary": """Esta revisión examina las implicaciones éticas del uso de chatbots de inteligencia artificial generativa en la atención en salud mental a partir de los principios de la bioética. Reconoce el potencial creciente de estas herramientas para apoyar tareas clínicas como la recolección de antecedentes, la documentación y algunas interacciones empáticas. Sin embargo, destaca que la reflexión ética específica en salud mental sigue siendo limitada. El artículo sostiene que la investigación futura debe aclarar mejor los beneficios y daños de estos sistemas, especialmente en relación con la responsabilidad, la seguridad y la práctica ética en contextos emocionalmente sensibles.""",
     },
     {
         "title": "Chow, J. C. L. & Li, K. (2025). Large Language Models in Medical Chatbots: Opportunities, Challenges, and the Need to Address AI Risks. Information, 16(7).",
-        "summary": """This review analyzes the use of large language models in medical chatbots, covering technical foundations, applications, benefits, and risks. It highlights that LLMs improve scalability, personalization, and human-like interaction, but also introduce major concerns such as hallucinations, algorithmic bias, privacy risks, and unresolved legal accountability. The authors argue that governance frameworks must go beyond technical performance and include broader societal oversight, transparency, and long-term alignment to ensure safe and responsible use in healthcare.""",
+        "summary": """Esta revisión analiza el uso de modelos de lenguaje extensos en chatbots médicos, abordando sus bases técnicas, aplicaciones, ventajas y riesgos. Señala que estos modelos mejoran la escalabilidad, la personalización y la interacción similar a la humana, pero también introducen preocupaciones importantes como alucinaciones, sesgos algorítmicos, riesgos de privacidad y falta de claridad sobre la responsabilidad legal. Los autores argumentan que los marcos de gobernanza no deben centrarse solo en el rendimiento técnico, sino también en la supervisión social, la transparencia y la alineación a largo plazo para garantizar un uso seguro y responsable en salud.""",
     },
     {
         "title": "De Choudhury, M., Pendse, S. R. & Kumar, N. (2023). Benefits and Harms of Large Language Models in Digital Mental Health. arXiv:2311.14693v1.",
-        "summary": """This paper explores the opportunities and dangers of using LLMs in digital mental health through an ecological framework. It discusses how these technologies may influence care-seeking behaviors, community care, institutional care, and societal mental health ecosystems. While LLMs could support earlier intervention and personalization, the article warns that their rapid expansion also raises major concerns around trust, equity, safety, and user well-being. The authors call for responsible design and stronger research to guide ethical implementation.""",
+        "summary": """Este artículo explora las oportunidades y riesgos del uso de modelos de lenguaje extensos en salud mental digital desde un marco ecológico. Discute cómo estas tecnologías pueden influir en la búsqueda de ayuda, el cuidado comunitario, la atención institucional y los ecosistemas sociales de salud mental. Aunque podrían favorecer la intervención temprana y la personalización, el trabajo advierte que su expansión rápida también genera preocupaciones importantes sobre confianza, equidad, seguridad y bienestar del usuario. Los autores llaman a un diseño responsable y a investigaciones más sólidas que orienten una implementación ética.""",
     },
     {
         "title": "Grabb, D., Lamparth, M. & Vasan, N. (2024). Risks from Language Models for Automated Mental Healthcare: Ethics and Structure for Implementation. medRxiv. https://doi.org/10.1101/2024.04.07.24305462",
-        "summary": """This study evaluates ten language models using mental health-related prompts involving psychosis, mania, depression, suicidal thoughts, and homicidal tendencies. Responses were assessed by clinicians. The authors conclude that current models do not match the standard of human professionals because they struggle with context, may be overly cautious or sycophantic, and often lack essential safeguards. Alarmingly, most tested models could cause harm in emergencies. The paper proposes a framework based on levels of autonomy, ethical requirements, and beneficial default behaviors for safer deployment.""",
+        "summary": """Este estudio evalúa diez modelos de lenguaje a partir de prompts relacionados con psicosis, manía, depresión, pensamientos suicidas y tendencias homicidas. Las respuestas fueron valoradas por clínicos. Los autores concluyen que los modelos actuales no alcanzan el estándar de los profesionales humanos porque tienen dificultades para interpretar el contexto, pueden ser excesivamente cautelosos o complacientes y con frecuencia carecen de salvaguardas esenciales. De forma preocupante, la mayoría de los modelos evaluados podrían causar daño en emergencias. El artículo propone un marco basado en niveles de autonomía, requisitos éticos y comportamientos predeterminados benéficos para una implementación más segura.""",
     },
     {
         "title": "Hua, Y., et al. (2024). Charting the evolution of artificial intelligence mental health chatbots from rule-based systems to large language models: a systematic review. World Psychiatry, 23, 364-386.",
-        "summary": """This systematic review of 160 studies between 2020 and 2024 maps the evolution of mental health chatbots from rule-based systems to LLM-based systems. Although LLM chatbots are increasingly used for emotional support and psychoeducation, only a small proportion of studies have tested their clinical efficacy. Most remain in early validation stages. The review highlights a serious gap between technological novelty and rigorous evidence of therapeutic benefit, and it calls for standardized evaluation frameworks aligned with medical AI certification.""",
+        "summary": """Esta revisión sistemática de 160 estudios publicados entre 2020 y 2024 traza la evolución de los chatbots de salud mental desde sistemas basados en reglas hasta sistemas sustentados en modelos de lenguaje extensos. Aunque estos chatbots se usan cada vez más para apoyo emocional y psicoeducación, solo una proporción pequeña de los estudios ha puesto a prueba su eficacia clínica. La mayoría permanece en etapas tempranas de validación. La revisión destaca una brecha seria entre la novedad tecnológica y la evidencia rigurosa de beneficio terapéutico, y propone marcos estandarizados de evaluación acordes con la certificación de IA médica.""",
     },
     {
         "title": "Kwesi, J., et al. (2025). Exploring User Security and Privacy Attitudes and Concerns Toward the Use of General-Purpose LLM Chatbots for Mental Health. arXiv:2507.10695v1.",
-        "summary": """Through semi-structured interviews with U.S. participants, this study examines how users perceive privacy and security when using general-purpose LLM chatbots for emotional support. It finds that many people mistakenly believe these tools provide protections similar to those of licensed therapists. The authors identify a phenomenon called intangible vulnerability, in which emotional disclosures are undervalued compared with other kinds of personal data. The paper recommends stronger protections and clearer communication about the limits of these systems.""",
+        "summary": """A partir de entrevistas semiestructuradas con participantes en Estados Unidos, este estudio examina cómo perciben los usuarios la privacidad y la seguridad al usar chatbots generales basados en modelos de lenguaje para apoyo emocional. Encuentra que muchas personas creen erróneamente que estas herramientas ofrecen protecciones similares a las de terapeutas con licencia. Los autores identifican un fenómeno llamado vulnerabilidad intangible, en el que las revelaciones emocionales se subestiman frente a otros tipos de datos personales. El artículo recomienda protecciones más fuertes y una comunicación más clara sobre los límites reales de estos sistemas.""",
     },
     {
         "title": "Londoño Villarreal, L. F. (2025). Guía de cumplimiento: regulación de IA generativa en asesoría jurídica por chatbot en Colombia. Revista Criminalidad, 67(2).",
-        "summary": """Although focused on legal chatbots rather than mental health, this article provides a useful regulatory perspective on generative AI systems. It analyzes transparency, risk assessment, and data protection requirements in the Colombian context, drawing comparisons with international frameworks such as the EU AI Act and China’s PIPL. Its relevance lies in reinforcing the need for mandatory disclosure of non-human systems, principled transparency, and safeguards in high-responsibility advisory contexts.""",
+        "summary": """Aunque este artículo se centra en chatbots jurídicos y no en salud mental, ofrece una perspectiva regulatoria valiosa sobre los sistemas de IA generativa. Analiza exigencias de transparencia, evaluación de riesgos y protección de datos en el contexto colombiano, comparándolas con marcos internacionales como el EU AI Act y la PIPL de China. Su relevancia para este tema radica en reforzar la necesidad de divulgación obligatoria cuando se usa un sistema no humano, así como de transparencia y salvaguardas en contextos de asesoría de alta responsabilidad.""",
     },
     {
         "title": "Massenon, R., et al. (2025). 'My AI is Lying to Me': User-reported LLM hallucinations in AI mobile apps reviews. Scientific Reports, 15:30397.",
-        "summary": """This large-scale study analyzes three million user reviews from 90 AI mobile apps to understand how people perceive and report LLM hallucinations in real-world settings. It identifies a taxonomy of user-perceived hallucination types, with factual incorrectness emerging as the most frequently reported issue. The research shows that hallucinations significantly reduce trust and user satisfaction. These findings are important because they provide user-centered evidence that hallucinations are not merely technical imperfections but meaningful sources of harm and distrust.""",
+        "summary": """Este estudio a gran escala analiza tres millones de reseñas de usuarios en 90 aplicaciones móviles de IA para comprender cómo las personas perciben y reportan las alucinaciones de los modelos de lenguaje en contextos reales. Identifica una taxonomía de tipos de alucinación reportados por usuarios, siendo la incorrección factual la más frecuente. La investigación muestra que las alucinaciones reducen significativamente la confianza y la satisfacción del usuario. Estos hallazgos son importantes porque demuestran, desde la experiencia de los usuarios, que las alucinaciones no son solo fallas técnicas menores, sino fuentes reales de daño y desconfianza.""",
     },
     {
         "title": "Silveira, P. V. R. & Paravidini, J. L. L. (2024). Ética da aplicação de inteligências artificiais e chatbots na saúde mental: uma perspectiva psicanalítica. Revista Psicologia e Questões Contemporâneas (RPQ), 12(30).",
-        "summary": """This narrative review discusses the ethical implications of chatbots and artificial intelligence in mental health from a psychoanalytic perspective. It highlights risks such as emotional harm, low reliability of information, lack of accountability, and the absence of true therapeutic responsibility. The article argues that even when these systems appear supportive, they raise deep ethical questions about care, subjectivity, and responsibility, and it offers recommendations for more ethical design and deployment.""",
+        "summary": """Esta revisión narrativa discute las implicaciones éticas del uso de inteligencia artificial y chatbots en salud mental desde una perspectiva psicoanalítica. Destaca riesgos como el daño emocional, la baja confiabilidad de la información, la falta de rendición de cuentas y la ausencia de verdadera responsabilidad terapéutica. El artículo sostiene que, incluso cuando estos sistemas aparentan brindar apoyo, plantean preguntas éticas profundas sobre el cuidado, la subjetividad y la responsabilidad. Además, ofrece recomendaciones para un diseño y una implementación más éticos.""",
     },
 ]
 
@@ -403,7 +403,7 @@ st.markdown(
         background: rgba(255,255,255,0.95);
         border: 1px solid rgba(0,0,0,0.08);
         border-radius: 24px;
-        padding: 2rem 2rem 1.6rem 2rem;
+        padding: 2rem 2rem 1.4rem 2rem;
         box-shadow: 0 24px 80px rgba(0,0,0,0.12);
         z-index: 9999;
         animation: fadeIn 0.25s ease;
@@ -416,7 +416,6 @@ st.markdown(
         line-height: 1.45;
         color: var(--text);
         margin-bottom: 1rem;
-        padding-right: 3rem;
     }
 
     .modal-text {
@@ -432,6 +431,11 @@ st.markdown(
         font-size: 0.8rem;
         color: var(--muted);
         margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal-close-inline {
+        margin-top: 1.2rem;
     }
 
     div.stButton > button {
@@ -579,12 +583,16 @@ if st.session_state.selected_ref is not None:
         <div class="modal-box">
             <div class="modal-title">{ref["title"]}</div>
             <div class="modal-text">{ref["summary"]}</div>
-            <div class="close-note">Cierra este cuadro con el botón inferior.</div>
+            <div class="close-note">Puedes cerrar esta ventana con el botón de abajo.</div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
-    modal_cols = st.columns([4, 2, 4])
-    with modal_cols[1]:
-        st.button("Cerrar", on_click=close_reference, use_container_width=True)
+    close_cols_top = st.columns([4, 2, 4])
+    with close_cols_top[1]:
+        st.button("Cerrar referencia", key="close_ref_top", on_click=close_reference, use_container_width=True)
+
+    close_cols_bottom = st.columns([4, 2, 4])
+    with close_cols_bottom[1]:
+        st.button("Cerrar", key="close_ref_bottom", on_click=close_reference, use_container_width=True)
