@@ -188,6 +188,29 @@ references = [
     },
 ]
 
+# =========================
+# Funciones
+# =========================
+def go_next():
+    if st.session_state.section_index < len(sections) - 1:
+        st.session_state.section_index += 1
+
+def go_prev():
+    if st.session_state.section_index > 0:
+        st.session_state.section_index -= 1
+
+def go_home():
+    st.session_state.section_index = 0
+
+def go_to_section(index: int):
+    st.session_state.section_index = index
+
+def open_reference(index: int):
+    st.session_state.selected_ref = index
+
+def close_reference():
+    st.session_state.selected_ref = None
+
 
 # =========================
 # Estilos
@@ -202,9 +225,10 @@ st.markdown(
         --text: #111111;
         --muted: #5c5c5c;
         --line: rgba(0,0,0,0.08);
-        --card: rgba(255,255,255,0.72);
+        --card: rgba(255,255,255,0.78);
         --accent: #1e1e1e;
         --soft: #efefea;
+        --menu-bg: rgba(255,255,255,0.72);
     }
 
     html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
@@ -226,39 +250,56 @@ st.markdown(
     }
 
     .main .block-container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        max-width: 1200px;
+        padding-top: 0.8rem !important;
+        padding-bottom: 1rem !important;
+        max-width: 1400px;
     }
 
-    .article-shell {
-        min-height: 88vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        animation: fadeIn 0.45s ease;
+    div[data-testid="column"] {
+        padding-top: 0 !important;
     }
 
-    .section-box {
-        min-height: 72vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .menu-panel {
+        position: sticky;
+        top: 1rem;
+        background: var(--menu-bg);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 1.25rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .menu-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        margin-bottom: 0.75rem;
+    }
+
+    .menu-article-title {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.35;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 1rem;
+    }
+
+    .content-wrap {
+        animation: fadeIn 0.35s ease;
     }
 
     .section-card {
         width: 100%;
-        min-height: 70vh;
         background: var(--card);
         backdrop-filter: blur(14px);
         border: 1px solid var(--line);
         border-radius: 28px;
-        padding: 4.5rem 5rem;
+        padding: 2.4rem 2.8rem;
         box-shadow: 0 10px 35px rgba(0,0,0,0.04);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        animation: slideUp 0.45s ease;
+        animation: slideUp 0.35s ease;
     }
 
     .step-tag {
@@ -267,12 +308,12 @@ st.markdown(
         letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--muted);
-        margin-bottom: 1rem;
+        margin-bottom: 0.9rem;
     }
 
     .main-title {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(2.2rem, 4.8vw, 4.2rem);
+        font-size: clamp(2.1rem, 4.2vw, 4rem);
         line-height: 1.05;
         font-weight: 600;
         letter-spacing: -0.03em;
@@ -282,36 +323,42 @@ st.markdown(
 
     .section-title {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(1.9rem, 3.8vw, 3rem);
+        font-size: clamp(1.8rem, 3.2vw, 2.8rem);
         line-height: 1.08;
         font-weight: 600;
         letter-spacing: -0.03em;
         color: var(--text);
-        margin-bottom: 1.4rem;
+        margin-bottom: 1.25rem;
     }
 
     .quote {
         font-family: 'Inter', sans-serif;
         font-size: 0.98rem;
         color: var(--muted);
-        text-align: right;
-        margin-bottom: 2.2rem;
+        text-align: left;
+        margin-bottom: 2rem;
         letter-spacing: 0.01em;
     }
 
     .body-text {
         font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(1.35rem, 1.6vw, 1.65rem);
+        font-size: clamp(1.28rem, 1.55vw, 1.6rem);
         line-height: 1.65;
         color: #1f1f1f;
-        max-width: 980px;
         white-space: pre-line;
+    }
+
+    .ref-helper {
+        font-family: 'Inter', sans-serif;
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
     }
 
     .progress-wrap {
         width: 100%;
         margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .progress-track {
@@ -334,14 +381,7 @@ st.markdown(
         color: var(--muted);
         font-size: 0.9rem;
         margin-top: 0.8rem;
-        text-align: center;
-    }
-
-    .ref-helper {
-        font-family: 'Inter', sans-serif;
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
+        text-align: left;
     }
 
     .modal-backdrop {
@@ -360,7 +400,7 @@ st.markdown(
         width: min(920px, 88vw);
         max-height: 78vh;
         overflow-y: auto;
-        background: rgba(255,255,255,0.92);
+        background: rgba(255,255,255,0.95);
         border: 1px solid rgba(0,0,0,0.08);
         border-radius: 24px;
         padding: 2rem 2rem 1.6rem 2rem;
@@ -396,26 +436,20 @@ st.markdown(
 
     div.stButton > button {
         font-family: 'Inter', sans-serif;
-        border-radius: 999px;
-        border: 1px solid rgba(0,0,0,0.12);
-        background: rgba(255,255,255,0.7);
+        border-radius: 14px;
+        border: 1px solid rgba(0,0,0,0.10);
+        background: rgba(255,255,255,0.75);
         color: #111;
-        padding: 0.7rem 1.25rem;
+        padding: 0.72rem 0.95rem;
         transition: all 0.2s ease;
         box-shadow: none;
+        text-align: left;
+        justify-content: flex-start;
     }
 
     div.stButton > button:hover {
-        border-color: rgba(0,0,0,0.28);
+        border-color: rgba(0,0,0,0.22);
         background: rgba(255,255,255,0.95);
-    }
-
-    .ref-btn-note {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.88rem;
-        color: var(--muted);
-        margin-top: -0.3rem;
-        margin-bottom: 0.8rem;
     }
 
     @keyframes fadeIn {
@@ -426,7 +460,7 @@ st.markdown(
     @keyframes slideUp {
         from {
             opacity: 0;
-            transform: translateY(12px);
+            transform: translateY(10px);
         }
         to {
             opacity: 1;
@@ -436,16 +470,15 @@ st.markdown(
 
     @media (max-width: 900px) {
         .section-card {
-            padding: 2.2rem 1.4rem;
-            min-height: 74vh;
+            padding: 1.6rem 1.2rem;
         }
 
         .body-text {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         .modal-text {
-            font-size: 1.18rem;
+            font-size: 1.14rem;
         }
     }
     </style>
@@ -453,106 +486,85 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-
-# =========================
-# Funciones
-# =========================
-def go_next():
-    if st.session_state.section_index < len(sections) - 1:
-        st.session_state.section_index += 1
-
-
-def go_prev():
-    if st.session_state.section_index > 0:
-        st.session_state.section_index -= 1
-
-
-def open_reference(index: int):
-    st.session_state.selected_ref = index
-
-
-def close_reference():
-    st.session_state.selected_ref = None
-
-
 # =========================
 # Render principal
 # =========================
 current = sections[st.session_state.section_index]
 progress = (st.session_state.section_index + 1) / len(sections) * 100
 
-st.markdown('<div class="article-shell">', unsafe_allow_html=True)
-st.markdown('<div class="section-box">', unsafe_allow_html=True)
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
+menu_col, content_col = st.columns([1, 3], gap="large")
 
-st.markdown(
-    f'<div class="step-tag">Sección {st.session_state.section_index + 1} de {len(sections)} · {current["label"]}</div>',
-    unsafe_allow_html=True,
-)
+with menu_col:
+    st.markdown('<div class="menu-panel">', unsafe_allow_html=True)
+    st.markdown('<div class="menu-title">Navegación</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="menu-article-title">{TITLE}</div>', unsafe_allow_html=True)
 
-if current["id"] == "portada":
-    st.markdown(f'<div class="main-title">{current["title"]}</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="quote">{SUBTITLE}</div>', unsafe_allow_html=True)
-else:
-    st.markdown(f'<div class="section-title">{current["title"]}</div>', unsafe_allow_html=True)
+    for i, sec in enumerate(sections):
+        label = f"{i+1}. {sec['label']}"
+        if i == st.session_state.section_index:
+            label = f"● {label}"
+        if st.button(label, key=f"menu_{sec['id']}", use_container_width=True):
+            go_to_section(i)
 
-if current["id"] != "referencias":
-    st.markdown(f'<div class="body-text">{current["content"]}</div>', unsafe_allow_html=True)
-else:
-    st.markdown(f'<div class="ref-helper">{current["content"]}</div>', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    for i, ref in enumerate(references):
-        cols = st.columns([10, 1])
-        with cols[0]:
-            if st.button(ref["title"], key=f"ref_{i}", use_container_width=True):
-                open_reference(i)
-        with cols[1]:
-            st.markdown("")
-
-st.markdown(
-    f"""
-    <div class="progress-wrap">
-        <div class="progress-track">
-            <div class="progress-fill" style="width:{progress}%;"></div>
-        </div>
-        <div class="nav-caption">Navega entre secciones con los controles inferiores</div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown('</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-left, center, right = st.columns([1, 2, 1])
-
-with center:
-    nav1, nav2, nav3 = st.columns([1, 1, 1])
-
-    with nav1:
+    nav_a, nav_b = st.columns(2)
+    with nav_a:
         st.button(
-            "Anterior",
+            "← Anterior",
             on_click=go_prev,
             disabled=st.session_state.section_index == 0,
             use_container_width=True,
         )
-
-    with nav2:
+    with nav_b:
         st.button(
-            "Inicio",
-            on_click=lambda: st.session_state.update({"section_index": 0}),
-            use_container_width=True,
-        )
-
-    with nav3:
-        st.button(
-            "Siguiente",
+            "Siguiente →",
             on_click=go_next,
             disabled=st.session_state.section_index == len(sections) - 1,
             use_container_width=True,
         )
 
-st.markdown('</div>', unsafe_allow_html=True)
+    st.button("Inicio", on_click=go_home, use_container_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+with content_col:
+    st.markdown('<div class="content-wrap">', unsafe_allow_html=True)
+    st.markdown('<div class="section-card">', unsafe_allow_html=True)
+
+    st.markdown(
+        f'<div class="step-tag">Sección {st.session_state.section_index + 1} de {len(sections)} · {current["label"]}</div>',
+        unsafe_allow_html=True,
+    )
+
+    if current["id"] == "portada":
+        st.markdown(f'<div class="main-title">{current["title"]}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="quote">{SUBTITLE}</div>', unsafe_allow_html=True)
+    else:
+        st.markdown(f'<div class="section-title">{current["title"]}</div>', unsafe_allow_html=True)
+
+    if current["id"] != "referencias":
+        st.markdown(f'<div class="body-text">{current["content"]}</div>', unsafe_allow_html=True)
+    else:
+        st.markdown(f'<div class="ref-helper">{current["content"]}</div>', unsafe_allow_html=True)
+
+        for i, ref in enumerate(references):
+            if st.button(ref["title"], key=f"ref_{i}", use_container_width=True):
+                open_reference(i)
+
+    st.markdown(
+        f"""
+        <div class="progress-wrap">
+            <div class="progress-track">
+                <div class="progress-fill" style="width:{progress}%;"></div>
+            </div>
+            <div class="nav-caption">Usa el menú izquierdo para moverte entre secciones</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 # =========================
